@@ -9,4 +9,4 @@ Spring framework study with a book by Toby
 
 ### 1주차 과제
  * 1장 오브젝트와 의존관계(1) (53p ~ 101p)
-#### 모임 일자 : 5월 22일(수요일)
+#### 모임 일자 : 5월 29일(수요일)
