@@ -24,7 +24,7 @@ Spring framework study with a book by Toby
 #### 모임 일자 : 6월 25일(수요일)
 
 ### 5주차 과제
- * 3장 템플릿 (279p ~ 316p)
+ * 4장 예외 (279p ~ 316p)
  * 전략 패턴 문제(by lee)를 전략 패턴과 템플릿/콜백 적용해보기
  * SqlSessionTemplate, RestTemplate 살펴보기
 #### 모임 일자 : 7월 3일(수요일)
