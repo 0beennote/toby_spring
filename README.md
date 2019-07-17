@@ -29,3 +29,12 @@ Spring framework study with a book by Toby
  ![week5_subject.img](resource/img/week5_subject.jpg)
  * SqlSessionTemplate, RestTemplate 살펴보기
 #### 모임 일자 : 7월 3일(수요일)
+
+### 6주차 과제
+ * 5장 서비스 추상화 (317p ~ 375p)
+#### 모임 일자 : 7월 10일(수요일)
+
+### 7주차 과제
+ * 4장 예외 (279p ~ 375p)
+ * 토비의 스프링 현재까지 소스 살펴보기
+#### 모임 일자 : 7월 17일(수요일)
