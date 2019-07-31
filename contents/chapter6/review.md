@@ -139,7 +139,25 @@ public class MessageFactoryBean implements FactoryBean<Message> {
 ## 스프링의 프록시 팩토리 빈
 
 ### ProxyFactoryBean
+* 스프링의 ProxyFactoryBean은 프록시를 생성해서 빈 오브젝트로 등록하게 해주는 팩토리 빈이다.
+* ProxyFactoryBean이 생성하는 프록시에서 사용할 부가기능은 MethodInterceptor 인터페이스를 구현해서 만든다.
+* MethodInterceptor의 invoke() 메소드는 ProxyFactoryBean으로부터 타깃 오브젝트에 대한 정보까지도 함께 제공받아 싱글톤 빈으로 등록 가능하다.
 
-#### 어드바이스
+#### 어드바이스: 타깃이 필요 없는 순수한 부가기능
+* MethodInterceptor로는 메소드 정보와 함께 타깃 오브젝트가 담긴 MethodInvocation 오브젝트가 전달된다.
+* MethodInvocation은 타깃 오브젝트의 메소드를 실행할 수 있는 기능이 있기 때문에 MethodInterceptor는 부가기능을 제공하는 데만 집중할 수 있다.
+* MethodInvocation은 일종의 콜백 오브젝트로, proceed() 메소드를 실행하면 타깃 오브젝트의 메소드를 내부적으로 실행해주는 기능이 있다.
+* ProxyFactoryBean은 작은 단위의 템플릿/콜백 구조를 응용해서 적용했기 때문에 템플릿 역할을 하는 MethodInvocation을 싱글톤으로 두고 공유할 수 있다.
+* ProxyFactoryBean에는 여러 개의 MethodInterceptor를 추가할 수 있다. 하나의 팩토리 빈만으로 여러 개의 부가기능을 제공해주는 프록시를 만들 수 있다는 뜻이다.
+* 어드바이스: 타깃 오브젝트에 적용하는 부가기능을 담은 오브젝트
+* 인터페이스를 굳이 알려주지 않아도 ProxyFactoryBean에 있는 인터페이스 자동검출 기능을 사용해 타깃 오브젝트가 구현하고 있는 인터페이스 정보를 알아낸다.
+* 알아낸 인터페이스를 모두 구현하는 프록시를 만들어준다.
 
-#### 포인트컷
+#### 포인트컷: 부가기능 적용 대상 메소드 선정 방법
+* 포인트컷: 메소드 선정 알고리즘을 담은 오브젝트
+* 어드바이스와 포인트컷은 모두 프록시에 DI로 주입돼서 사용된다.
+* 어드바이스가 일종의 템플릿이 되고 타깃을 호출하는 기능을 갖고 있는 MethodInvocation 오브젝트가 콜벡이 되는 전형적인 템플릿/콜백 구조이다.
+* 프록시로부터 어드바이스와 포인트컷을 독립시키고 DI를 사용하게 한 것은 전형적인 전략 패턴 구조이다.
+* 어드바이저: 어드바이스와 포인트컷을 묶은 오브젝트를 인터페이스 이름을 따서 어드바이저라고 부른다.
+
+
