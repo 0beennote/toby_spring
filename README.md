@@ -52,4 +52,6 @@ Spring framework study with a book by Toby
 ### 10주차 과제
  * 6장 AOP (475p ~ 512p)
  * 데코레이터 패턴 문제 찾아보기
+ ![week10_subject1.img](resource/img/KakaoTalk_20190804_194106538_01.jpg)
+ ![week10_subject2.img](resource/img/KakaoTalk_20190804_194106538_02.jpg)
 #### 모임 일자 : 8월 7일(수요일)
