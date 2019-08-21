@@ -265,4 +265,5 @@ DefaultTrnasactionDefinition이 구현하고 있는 TrnasactionDefinition 인터
 ## 애노테이션 트랜잭션 속성과 포인트컷
 
 ### 트랜잭션 어노테이션
-* @Transactional
+* @Transactional을 사용하면 대체 정책을 잘 활용해서 애노테이션 자체는 최소한으로 사용하면서도 세밀한 제어가 가능하다.
+* 타깃 메소드, 타깃 클래스, 선언 메소드, 선언 타입의 순서 -> 먼저 발견되는 속성정보를 사용하게 하는 4단계의 대체 정책.
